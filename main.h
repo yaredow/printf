@@ -18,5 +18,5 @@ typedef struct type
 int _putchar(char c);
 int (*get_function(const char *specifier))(va_list);
 int print_rev(va_list args);
-
+int rot13(va_list args);
 #endif
