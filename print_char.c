@@ -9,12 +9,10 @@
  */
 int print_char(va_list c)
 {
-	unsigned char my_char;
-
-	my_char = va_arg(c, int);
-	_putchar(my_char);
-	return (1);
-}
+unsigned char my_char;
+my_char = va_arg(c, int);
+_putchar(my_char);
+return (1); }
 /**
  * print_porcentage - %
  *
@@ -22,6 +20,5 @@ int print_char(va_list c)
  */
 int print_porcentage(void)
 {
-	_putchar('%');
-	return (1);
-}
+_putchar('%');
+return (1); }
