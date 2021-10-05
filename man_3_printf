@@ -1,0 +1,44 @@
+.TH PRINTF 3 "05 October 2021" "1.0" "ALX School 0x11. C - printf"
+.SH NAME
+printf
+.SH SYNOPSIS
+#include <stdio.h>
+
+int printf(char *format, ...)
+.SH DESCRIPTION
+Print output according to format.
+
+Printf is a function that writes output to the stdout, which is the standard output stream.
+
+Also, the function writes the output according to the format string. This format string specifies how the following arguments are converted for output.
+
+.B Return value
+
+The function returns the number of characters printed for success. Note: It excludes the null byte used to end output to strings.
+
+The function returns a negative value if an output error occurs.
+
+.B Format of the format string
+
+The format string is a character string. It contains zero or more directives. The directives are ordinary characters and do not include %, which are copied to the output stream. It also includes, conversion specifications that results in obtaining zero or more subsequent arguments. To introduce a conversion specification, a character % and a conversion specifier are used.
+
+The arguments must match to the correct conversion specifier.
+
+.B The conversion specifier
+
+A conversion specifier is a character that specifies the type of conversion to be used. It is used during input and output. It tells the compiler what type of data is in the varaible when printing using printf. The conversion specifiers and their use are:
+.Nm d, i
+The format specifier for the data type integer is %d and %i. The int argument is converted to a signed decimal notation. Their use is identical in prinf(), but in scanf(), they return different outputs. 
+.SH c
+The data type is a char and the format specifier is %c. It's used to format a single character. 
+.SH s
+The format specifier for the data type char that is a string is %s. It is used to format a string/character sequence.
+.SH r
+The format specifier for the data type char that is a string printed in reverse is %r. It's formatted like the format specifier, s.
+.SH %
+A '%' is written. No argument is converted. When used the complete conversion specification is '%%.'
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Yared Yilma and Abdisa Gemechu
+
