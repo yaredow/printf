@@ -1,45 +1,62 @@
+
 #include "main.h"
 
+#include <stdio.h>
+
 /**
- * rot13 - encodes and prints a string in rot13
- * @args: va_list with the string to encode as its next element
- *
- * Return: number of characters printed
+
+ * print_rot13 - encodes a string into rot13.
+
+ * @R: string to convert
+
+ * Return: size the output text
+
  */
 
-int rot13(va_list args)
+int print_rot13(va_list R)
+  
 {
-	char *str = va_arg(args, char *);
-	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	int idx, count = 0;
-	char *encoded = NULL;
+  
+  int j, i, count = 0;
+  
+  char *r;
+  
+  char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
+  
+  char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLM nopqrstuvwxyzabcdefghijklm";
+  
 
-	encoded = malloc(sizeof(char) * (_strlen(str) + 1));
-
-	if (!encoded || !str)
-		return (-1);
-
-	for (count = 0; str[count]; count++)
+  
+  r = va_arg(R, char *);
+  
+  if (r == NULL)
+    
+    r = "(null)";
+  
+  for (j = 0; r[j] != '\0'; j++)
+    
+    {
+      
+      for (i = 0; input[i] != '\0'; i++)
+	
 	{
-		for (idx = 0; idx < 52; idx++)
-		{
-			if (str[count] == alphabet[idx])
-			{
-				encoded[count] = rot13[idx];
-				break;
-			}
-		}
-/* Insert characters that do not get rot13'd -- punctuation and numbers */
-		if (str[count] != alphabet[idx])
-			encoded[count] = str[count];
+	  
+	  if (r[j] == input[i])
+	    
+	    {
+	      
+	      _putchar(output[i]);
+	      
+	      count++;
+	      
+	      break;
+	      
+	    }
+	  
 	}
-
-	for (count = 0; encoded[count]; count++)
-		_putchar(encoded[count]);
-
-	free(encoded);
-
-	return (count);
+      
+    }
+  
+  return (count);
+  
 }
-
