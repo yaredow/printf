@@ -1,19 +1,8 @@
 .TH _PRINTF 3 "October 2020" "0.1" "Holberton School 0x10. C - _printf"
-
-
-
 .SH NAME
-
 .B _printf\fR \- formatted output conversion
-
-
-
 .SH SYNOPSIS
-
 .B #include \fB"holberton.h"
-
-
-
 .B int printf(const char *\fIformat\fB, ...);
 
 
